@@ -1,0 +1,22 @@
+.updatebtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.updatebtn:hover {
+    background-color: #3e8e41;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.content p {
+    text-align: left;
+    font-size: 16px;
+}
+
+.content p.b {
+    font-weight: bold;
+}

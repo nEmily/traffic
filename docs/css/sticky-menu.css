@@ -42,30 +42,19 @@ html {
     background-color: #337AB7;
     color: #FFF;
 }
-.welcome-section {
+.odd-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
     background: #fff;
 }
-.about-section {
+.even-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
     background: #EFDECD;
 }
-.whatwedo-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #fff;
-}
-.contact-section {
-    height: 100%;
-    padding-top: 150px;
-    text-align: center;
-    background: #EFDECD;
-}
+
 .navbar-default .navbar-nav > li > a:hover {
 	color: #333;
 	background-color: #F0F0F0;

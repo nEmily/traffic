@@ -1,0 +1,176 @@
+﻿<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Crowd Simulation | Emily Nguyen </title>
+    <meta name="description" content="A crowd simulation using Unity">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/sticky-menu.css" rel="stylesheet">
+    <link href="css/drop-down-menu.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="dropdown">
+                    <!-- TODO: Update this every time a new page is added -->
+                    <button class="dropbtn"><a class="navbar-brand page-scroll" href="#page-top">Project Spec</a></button>
+                    <div class="dropdown-content">
+                        <a href="index.html">Overview</a>
+                        <a href="proposal.html">Project Spec</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#overview">Overview</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#problemspace">Problem Space</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#deliverables">Deliverables</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#timeline">Timeline</a>
+                    </li>
+                </ul>
+            </div>	<!-- .navbar-collapse -->
+        </div>		<!-- .container -->
+    </nav>
+
+    <!-- Overview -->
+    <section id="overview" class="odd-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
+                        <h1>Overview</h1>
+                        <p>This one-person project will simulate a crowd of people walking around a pedestrian crosswalk. This can be achieved by using a particle system; each person will be represented by a particle, and position and velocity will be calculated at each time step dependent on the surrounding forces, such as attraction to the entrance or exist, repulsion from other particle, and alignment towards the natural path. </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Space Section -->
+    <section id="problemspace" class="even-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
+
+                        <h1>Problem Space</h1>
+                        <p>
+                            A large reason why I got into computer graphics was to aid in video game development. Simulation and especially particle systems are useful techniques in game physics and practical knowledge of these concepts are likely to be used in the future.
+                        </p>
+                        <p>
+                            In this project, I will apply particle system techniques to simulate a real-life human crowd movement system, exhibiting behaviors like moving towards a goal, creating personal space between other humans, and steering a crowd in a general direction. Mimicking real human behaviors can be useful in future projects, and this concept can also be applied to other objects such as flocking birds, cars in traffic, or walking pedestrians.
+                        </p>
+                        <p>
+                            It will be challenging to simulate movement in a way where each human is dependent on the system around it. Different from a bird flocking simulation or water particle simulation, I will also have to calculate for new human “particles” exiting and entering the system at specified intervals.
+                        </p>
+                        <p>
+                            To solve this problem, it would be best to calculate and store each person’s position and velocity. Then, at each time step, I can calculate a new position that each person will go, depending on their direction and all the people in the area.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deliverables -->
+    <section id="deliverables" class="even-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
+                        <h1>Deliverables</h1>
+                        <p>
+                            How would we go about creating an accurate and stable human movement simulation? Could this approach be easily generalized and adaptable to any particle system? Once simulated, can we observe human behavior and identify what causes traffic or chaos? These are the questions I will strive to answer through this project.
+                        </p>
+                        <p class="b"> Baseline:</p>
+                        <p>
+                            At the baseline, the project should simulate human movement in a pedestrian walkway. The simulated behaviors should include humans entering the simulation from an unknown source, exiting to some destination, collision avoidance, alignment to a specific pathway, and abidance to intersection laws (green walk sign, red stop sign, etc).
+                        </p>
+                        <p class="b"> Ideally:</p>
+                        <p>
+                            More human behavior should be included, such as traffic build-up and avoidance of large crowds.
+                        </p>
+                        <p class="b"> Stretch goals:</p>
+                        <p>
+                            The user should be able to interact with the demo by toggling traffic lights or allowing more people to enter the simulation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section id="timeline" class="odd-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
+                        <h1>Timeline</h1>
+                        <p>
+                            How would we go about creating an accurate and stable human movement simulation? Could this approach be easily generalized and adaptable to any particle system? Once simulated, can we observe human behavior and identify what causes traffic or chaos? These are the questions I will strive to answer through this project.
+                        </p>
+                        <p class="b"> Baseline:</p>
+                        <p>
+                            At the baseline, the project should simulate human movement in a pedestrian walkway. The simulated behaviors should include humans entering the simulation from an unknown source, exiting to some destination, collision avoidance, alignment to a specific pathway, and abidance to intersection laws (green walk sign, red stop sign, etc).
+                        </p>
+                        <p class="b"> Ideally:</p>
+                        <p>
+                            More human behavior should be included, such as traffic build-up and avoidance of large crowds.
+                        </p>
+                        <p class="b"> Stretch goals:</p>
+                        <p>
+                            The user should be able to interact with the demo by toggling traffic lights or allowing more people to enter the simulation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/sticky-menu.js"></script>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p> <a href="https://html5-templates.com/" target="_blank" rel="nofollow">Made with HTML5 Templates</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

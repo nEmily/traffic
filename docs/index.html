@@ -1,14 +1,17 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" class="no-js">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="canonical" href="https://html5-templates.com/" />
-    <title>Bootstrap Template With Sticky Menu</title>
-    <meta name="description" content="Simplified Bootstrap template with sticky menu">
+    <title>Crowd Simulation | Emily Nguyen </title>
+    <meta name="description" content="A crowd simulation using Unity">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/sticky-menu.css" rel="stylesheet">
+    <link href="css/drop-down-menu.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -20,7 +23,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Welcome</a>
+                <div class="dropdown">
+                    <!-- TODO: Update this every time a new page is added -->
+                    <button class="dropbtn"><a class="navbar-brand page-scroll" href="#page-top">Overview</a></button>
+                    <div class="dropdown-content">
+                        <a href="index.html">Overview</a>
+                        <a href="proposal.html">Project Spec</a>
+                    </div>
+                </div>
             </div>
 
             <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -29,69 +39,44 @@
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#whatwedo">What We Do</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#overview">Overview</a>
                     </li>
                 </ul>
             </div>	<!-- .navbar-collapse -->
         </div>		<!-- .container -->
     </nav>
-    <!-- Welcome   -->
-    <section id="welcome" class="welcome-section">
+    <!-- Home   -->
+    <section id="home" class="odd-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Bootstrap Sticky Scrolling Menu</h1>
-                    <p>Responsive one-page scrolling template with sticky menu on the top of the page. The active page gets highlighted as the user scrolls on the page or selects an option in the menu.</p>
-					<p>A back to top arrow fades in as the user starts scrolling down the page which takes back to the welcome screen with one click.</p>
-					<p>You can edit and publish this template but please leave a reference to <a href="https://html5-templates.com/" target="_blank" rel="nofollow">HTML5 Templates</a>. Thank You!</p>
-					<p>&nbsp;</p>
-                    <a class="btn btn-primary page-scroll" href="#about">Click To Scroll Down!</a>
+                    <div class="content">
+                        <h1>Crowd Simulation</h1>
+                        <p>&nbsp;</p>
+                        <a class="updatebtn" href="proposal.html">Click to See Project Proposal!</a>
+                        <!--<a class="btn btn-primary page-scroll" href="#about">Click To Scroll Down!</a>-->
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="about-section">
+    <!-- Overview -->
+    <section id="overview" class="even-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>About</h1>
+                    <div class="content">
+                        <h1>Overview</h1>
+                        <p>This one-person project will simulate a crowd of people walking around a pedestrian crosswalk. This can be achieved by using a particle system; each person will be represented by a particle, and position and velocity will be calculated at each time step dependent on the surrounding forces, such as attraction to the entrance or exist, repulsion from other particle, and alignment towards the natural path. </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What we do Section -->
-    <section id="whatwedo" class="whatwedo-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>What We Do</h1>
-                </div>
-            </div>
-        </div>
-    </section>
+    <a id="back2Top" title="Back to top" href="#">&#10148;</a>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Contact Section</h1>
-                </div>
-            </div>
-        </div>
-    </section>
-	
-	<a id="back2Top" title="Back to top" href="#">&#10148;</a>
-	
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -102,6 +87,13 @@
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/sticky-menu.js"></script>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <p> <a href="https://html5-templates.com/" target="_blank" rel="nofollow">Made with HTML5 Templates</a></p>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
