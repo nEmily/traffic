@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class Particle : MonoBehaviour
 {
-    [HideInInspector] public ParticleSystem system;
+    public ParticleSystem system;
     [ReadOnly] public Vector3 position;
     [ReadOnly] public Vector3 last_position;
 
     // Start is called before the first frame update
     void Start()
     {
-        system.AddParticle(this);
+        //system.AddParticle(this);
     }
 
     // Update is called once per frame

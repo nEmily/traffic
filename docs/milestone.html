@@ -1,0 +1,143 @@
+﻿<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Crowd Simulation | Emily Nguyen </title>
+    <meta name="description" content="A crowd simulation using Unity">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/sticky-menu.css" rel="stylesheet">
+    <link href="css/drop-down-menu.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="dropdown">
+                    <!-- TODO: Update this every time a new page is added -->
+                    <button class="dropbtn"><a class="navbar-brand page-scroll" href="#page-top">Milestone</a></button>
+                    <div class="dropdown-content">
+                        <a href="index.html">Overview</a>
+                        <a href="proposal.html">Project Spec</a>
+                        <a href="milestone.html">Milestone</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#pathing">Pathing</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#environment">Environment</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#revisions">Revisions</a>
+                    </li>
+                </ul>
+            </div>	<!-- .navbar-collapse -->
+        </div>		<!-- .container -->
+    </nav>
+
+    <!-- Pathing -->
+    <section id="pathing" class="odd-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
+                        <h1>Pathing</h1>
+                        <p>
+                            For the milestone, there were two things that I wanted to tackle: the pathing of the models and then the scenery.
+                        </p>
+                        <p>
+                            To create the pathing, I set up a working environment with a capsule as the model and basic walls and floor.
+                        </p>
+                        <p>&nbsp;</p>
+                        <img src="images/pathing-scene.png" style="width:800px" />
+                        <p>&nbsp;</p>
+
+                        <p> Unity has a navigation mesh feature, in which the platform will pre-compute a map of walkable paths for agents. In the following top-down image, the blue area is the walkable section for a humanoid shaped capsule. Then, by setting the capsule as a Nav Mesh Agent, it is trivial to set a start and end destination and have a path computed for the agent to follow.</p>
+                        <p>&nbsp;</p>
+                        <img src="images/navmesh.png" style="width:800px" />
+                        <p>&nbsp;</p>
+                        <p> Although creating a path between point A and B is simple, it will be much more complicated in the project later to try to integrate red walking lights, cars, and other obstacles that would prevent smooth pathtracing.</p>
+                        <p> Lastly, to aid with the testing purposes, I created a generator that would fill a box collider with capsule models. Take note of the green box in the image below, and the on-the-spot generated capsules.</p>
+                        <img src="images/generator.png" style="width:800px" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Environment -->
+    <section id="environment" class="even-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
+
+                        <h1>Environment</h1>
+                        <p>
+                            As I have a basic pathing system down, the next part was finding a suitable environment. I scoured online and found these resources to use for the scene.
+                        </p>
+                        <p>&nbsp;</p>
+                        <img src="images/stage.png" style="width:800px" />
+                        <p>&nbsp;</p>
+                        <img src="images/model.png" style="width:800px" />
+                        <p>&nbsp;</p>
+                        <p>
+                            I'll still have to implement stop signs, lights, moving cars, etc. By the end of the weekend, I should be able to integrate both this scene and the pathing scene into one, although I might not integrate them until I have a solid pathing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revisions -->
+    <section id="revisions" class="odd-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
+
+                        <h1>Revisions</h1>
+                        <p>
+                            I thought it would be much trickier to figure out a pathing from destination A to destination B, but the platform I'm using calculates that section easily, in a way where I don't have to store velocities or positions. I'm expecting that the project will still be difficult and that I will have to calculate future positions when I integrate obstacles and collisions, however, in the case that it does not, I may have to pivot the project to something like birds flocking so that I can apply CS184 concepts better and learn something more challenging.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/sticky-menu.js"></script>
+s
+</body>
+
+</html>

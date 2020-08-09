@@ -43,14 +43,16 @@ html {
     color: #FFF;
 }
 .odd-section {
-    height: 100%;
-    padding-top: 150px;
+    /*height: 100%;*/
+    padding-top: 100px;
+    padding-bottom: 75px;
     text-align: center;
     background: #fff;
 }
 .even-section {
-    height: 100%;
-    padding-top: 150px;
+    /*height: 100%;*/
+    padding-top: 100px;
+    padding-bottom: 75px;
     text-align: center;
     background: #EFDECD;
 }
