@@ -63,10 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Generator.cs" />
-    <Compile Include="Assets\Particle.cs" />
-    <Compile Include="Assets\ParticleSystem.cs" />
-    <Compile Include="Assets\Pathing.cs" />
+    <Compile Include="Assets\Scripts\Animation.cs" />
+    <Compile Include="Assets\Scripts\Generator.cs" />
+    <Compile Include="Assets\Scripts\Particle.cs" />
+    <Compile Include="Assets\Scripts\ParticleSystem.cs" />
+    <Compile Include="Assets\Scripts\Pathing.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\CameraLogic.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\Demo.cs" />
     <Compile Include="Assets\Supercyan Character Pack Free Sample\Scripts\SimpleCharacterControl.cs" />
