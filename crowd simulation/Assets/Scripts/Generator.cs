@@ -44,10 +44,8 @@ public class Generator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("collision");
         if (other.CompareTag("Player") && other.GetComponent<Pathing>().dest == gameObject.transform)
         {
-            Debug.Log("desparning////");
             other.GetComponent<Pathing>().DeSpawn();
         }
     }
