@@ -18,7 +18,7 @@ public class Animation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_animator.SetFloat("MoveSpeed", nm.velocity.magnitude);
+        m_animator.SetFloat("MoveSpeed", 2 * nm.velocity.magnitude / 3);
 
     }
 }

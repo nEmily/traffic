@@ -11,19 +11,27 @@ public class Pathing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nm = GetComponent<NavMeshAgent>();
-        nm.SetDestination(dest.position);
+        //nm = GetComponent<NavMeshAgent>();
+        //nm.SetDestination(dest.position);
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (dest && transform == dest) {
+            Destroy(gameObject);
+        }
     }
 
-    public void SetDest(Vector3 dest)
+    public void SetDest(Transform t)
     {
         nm = GetComponent<NavMeshAgent>();
-        nm.SetDestination(dest);
+        dest = t;
+        nm.SetDestination(t.position);
+    }
+
+    public void DeSpawn()
+    {
+        Destroy(gameObject);
     }
 }
