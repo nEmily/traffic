@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class PedestrianLight : MonoBehaviour
 {
-    GameObject walkLight;
-    GameObject stopLight;
+    public GameObject walkLight;
+    public GameObject stopLight;
 
     public bool walk;
     float stopTime = 10f;
     float walkTime = 5f;
-    float timer = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        walkLight = gameObject.transform.Find("Walk Light").gameObject;
-        stopLight = gameObject.transform.Find("Stop Light").gameObject;
+        //walkLight = gameObject.transform.Find("Walk Light").gameObject;
+        //stopLight = gameObject.transform.Find("Stop Light").gameObject;
         if (Random.Range(0, 2) == 0)
         {
             walk = false;
@@ -47,12 +46,13 @@ public class PedestrianLight : MonoBehaviour
                 walk = false;
                 stopLight.SetActive(true);
                 walkLight.SetActive(false);
+            } else
+            {
+                yield return new WaitForSeconds(Random.Range(3, stopTime));
+                walk = true;
+                walkLight.SetActive(true);
+                stopLight.SetActive(false);
             }
-
-            yield return new WaitForSeconds(Random.Range(3, stopTime));
-            walk = true;
-            walkLight.SetActive(true);
-            stopLight.SetActive(false);
         }
     }
 }

@@ -35,5 +35,16 @@ public class CameraLogic : MonoBehaviour
         {
             transform.Rotate(0, 5, 0);
         }
+
+        if (Input.GetKey(KeyCode.W))
+        {
+            transform.Rotate(-5, 0, 0);
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            transform.Rotate(5, 0, 0);
+        }
+
     }
 }

@@ -1,0 +1,189 @@
+﻿<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="https://html5-templates.com/" />
+    <title>Crowd Simulation | Emily Nguyen </title>
+    <meta name="description" content="A crowd simulation using Unity">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/sticky-menu.css" rel="stylesheet">
+    <link href="css/drop-down-menu.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle menu</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="dropdown">
+                    <!-- TODO: Update this every time a new page is added -->
+                    <button class="dropbtn"><a class="navbar-brand page-scroll" href="#page-top">Final Results</a></button>
+                    <div class="dropdown-content">
+                        <a href="index.html">Overview</a>
+                        <a href="proposal.html">Project Spec</a>
+                        <a href="milestone.html">Milestone</a>
+                        <a href="final.html">Final Results</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a class="page-scroll" href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#tech">Technical Approach</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#results">Results</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#references">References</a>
+                    </li>
+                </ul>
+            </div>	<!-- .navbar-collapse -->
+        </div>		<!-- .container -->
+    </nav>
+
+    <!-- Abstract -->
+    <section class="odd-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
+                        <p>&nbsp;</p>
+
+                        <p>
+                            This project simulates human behavior in an intersection on a busy street. By considering each human as an object and keeping track of each object's velocity, starting location, and destination, a shortest-path path that will avoid other objects, follow recommended pathways, and abide by pedestrian lights and legal road laws can be computed.
+                        </p>
+
+                        <p class="b"> Video Summary </p>
+
+                        <video width="750" controls>
+                            <source src="videos/simulation video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>&nbsp;</p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Approach -->
+    <section id="tech" class="even-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
+
+                        <h1>Technical Approach</h1>
+                        <p class="b"> Navigation Mesh & Agents</p>
+                        <p>
+                            Unity's NavMesh system allows me to build a map around the 3D models of the environment. By creating box or sphere colliders for every building and street, I can prevent intersection between buildings and the character models where there shouldn't be, as well as prevent characters from falling through the street.
+                        </p>
+                        <p>
+                            Then, I can set certain material to have a set area cost. Area costs will encourage pathing on sidewalks and discourage jaywalking unless it is extremely convenient, such as maybe cutting a corner, as real humans are apt to do.
+                        </p>
+                        <p>
+                            Then, using Unity's built-in A* Search, character models are directed from their current location to their destinations.
+                        </p>
+                        <p class="b"> Spawning / Despawning</p>
+                        <p>
+                            At specific points, spawn each character at random intervals. Destroy the character when they reach their randomly selected destination. The first implementation caused problems when multiple models reached the destination at the same time, and they would end up trying to push each other around; instead, I created a box collider wrapping the original destination point that, once reached, will despawn the characters.
+                        </p>
+                        <p class="b"> Dynamic Pathing</p>
+                        <p>
+                            The previous steps allows for the nav mesh to be baked when building the project so that the pathfinding of the agents can be computed quickly. However, this assumes that the environment remains static. In real-life however, an environment is dynamic. This project simulates this by the use of pedestrian lights, which can toggle certain crosswalks to be on and off.
+                        </p>
+                        <p> Actually toggling the light was a challenge, as I only had the 3D model without animations. However, by setting a light source on both signal lights, I can toggle the light sources on/off depending on if the setting is WALK or STOP.</p>
+                        <p>
+                            In order to check if an agent is about to use a crosswalk, sample a position in the path some meters away and check to see if the relevent position intersects a box collider of a crosswalk. If it does, check its relevant pedestrian light toggle. The agent will then choose to wait out the light, by changing its velocity to 0, or check other possible paths. If the agent is on the crosswalk as the light changes, its velocity spikes up as the agent "hurries" off the street.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section id="results" class="odd-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
+
+                        <h1>Results</h1>
+                        <video width="750" controls>
+                            <source src="videos/camera_Trim.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>&nbsp;</p>
+
+                        <video width="750" controls>
+                            <source src="videos/minute.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p>&nbsp;</p>
+
+                        <p>To fully interact with the program, please download the executable file at: https://github.com/nEmily/traffic. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- References -->
+    <section id="references" class="even-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="content">
+                        <h1>References</h1>
+                        <p>
+                            - <a href="https://core.ac.uk/download/pdf/195706349.pdf">Alicia Miquel's master thesis on the development of crowd simulation models</a>
+                        </p> <p>
+                            - <a href="https://assetstore.unity.com/packages/3d/environments/urban/cartoon-low-poly-city-pack-lite-166617">Low Poly City Pack</a>
+                        </p> <p>
+
+                            - <a href="https://assetstore.unity.com/packages/3d/environments/roadways/low-poly-road-pack-67288">Low Poly scenery</a>
+                        </p> <p>
+
+                            - <a href="https://assetstore.unity.com/packages/3d/characters/humanoids/character-pack-free-sample-79870">Character model and animation</a>
+                        </p> <p>
+                            - <a href="https://assetstore.unity.com/packages/3d/environments/urban/simple-modular-street-kit-13811">Street asset pack</a>
+                        </p> <p>
+                            - <a href="https://docs.unity3d.com/ScriptReference/AI.NavMesh.html">Unity's extensive NavMesh documentation</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Scrolling Nav JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/sticky-menu.js"></script>
+    s
+</body>
+
+</html>
